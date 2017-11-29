@@ -3,9 +3,19 @@ import ReactDOM from 'react-dom';
 import Grid from './components/grid';
 
 export default class App extends React.Component {
-	render(){
-		return(
-			<Grid/>
+
+	fetchPhotos = () => {
+		console.log('hej hej')
+	}
+
+	render() {
+		return (
+
+			<div>
+				{this.fetchPhotos()}
+
+				<Grid/>
+			</div>
 		);
 	}
 }
