@@ -1,20 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Grid from "./components/grid";
+import Header from "./components/Header";
 import './sass/index.scss';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      images: []
+      images: [],
+			searchQuery: "christmas",
     };
   }
 
   componentDidMount() {
     //Make get request
     const url =
-      "https://pixabay.com/api/?key=7218190-f36bf2d395f9f4e25477f5282&q=christmas&image_type=photo&per_page=6";
+      "https://pixabay.com/api/?key=7218190-f36bf2d395f9f4e25477f5282&q=" + this.state.searchQuery + "&image_type=photo&per_page=6";
 
     fetch(url)
       .then(res => res.json())
@@ -38,6 +40,7 @@ export default class App extends React.Component {
   	});
     return (
       <div>
+				<Header/>
         <Grid images={images} />
       </div>
     );

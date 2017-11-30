@@ -1,7 +1,10 @@
 @import "grid";
+@import "header";
+@import "color";
 
 body {
   margin: 0;
   box-sizing: border-box;
   overflow-x: hidden;
+  background-color: $main-color;
 }
