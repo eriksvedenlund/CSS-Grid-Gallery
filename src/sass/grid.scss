@@ -1,18 +1,10 @@
-body {
-	margin: 0;
-}
-
 .wrapper {
 	display: grid;
 	grid-template-columns: repeat(20, 1fr);
 	grid-template-rows: repeat(20, 1fr);
 	height: 100vh;
+  width: 60%;
 	grid-gap: 4px;
-
-	div {
-		background-color: #eee;
-		border: 1px solid black;
-	}
 }
 .box0 {
  grid-column: 11/19;

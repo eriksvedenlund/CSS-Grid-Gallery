@@ -1,8 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Grid from "./components/grid";
-import Picture from "./components/picture";
-// import './sass/grid.scss';
+import './sass/index.scss';
 
 export default class App extends React.Component {
   constructor(props) {
