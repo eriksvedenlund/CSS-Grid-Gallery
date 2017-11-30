@@ -1,26 +1,41 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Grid from './components/grid';
+import React from "react";
+import ReactDOM from "react-dom";
+import Grid from "./components/grid";
+import Picture from "./components/picture";
 
 export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      images: []
+    };
+  }
 
-	fetchPhotos = () => {
-		//Make get request
+  componentDidMount() {
+    //Make get request
+    const url =
+      "https://pixabay.com/api/?key=3543569-dc23314ee3d8dc6fc0b6f3899&q=yellow+flowers&image_type=photo";
 
-		fetch('https://pixabay.com/api/?key=7218190-f36bf2d395f9f4e25477f5282&q=christmas&image_type=photo&per_page=6')
-			.then((res) => res.json())
-			.then( (res) => console.log(res))
-			.catch( (err) => console.log(err))
-	}
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        //console.log(data);
+        this.setState({
+          images: data.hits
+        });
+      });
+  }
 
-	render() {
-		return (
-			<div>
-				{this.fetchPhotos()}
-				<Grid/>
-			</div>
-		);
-	}
+  render() {
+    return (
+      <div className="container">
+        {this.state.images.map((image, index) => {
+          return <Picture image={image} id={index} />;
+          console.log(image);
+        })}
+      </div>
+    );
+  }
 }
 
-ReactDOM.render(<App/>, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById("root"));
