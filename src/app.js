@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Grid from "./components/grid";
 import Picture from "./components/picture";
+// import './sass/grid.scss';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -14,7 +15,7 @@ export default class App extends React.Component {
   componentDidMount() {
     //Make get request
     const url =
-      "https://pixabay.com/api/?key=3543569-dc23314ee3d8dc6fc0b6f3899&q=yellow+flowers&image_type=photo";
+      "https://pixabay.com/api/?key=7218190-f36bf2d395f9f4e25477f5282&q=christmas&image_type=photo&per_page=6";
 
     fetch(url)
       .then(res => res.json())
@@ -27,12 +28,16 @@ export default class App extends React.Component {
   }
 
   render() {
+  	let images = this.state.images.map((image, index) => {
+  		return(
+  			<div key={index} className={"box" + index }>
+  				<img src={image.webformatURL} alt="dddd" />
+  			</div>
+  		);
+  	});
     return (
       <div className="container">
-        {this.state.images.map((image, index) => {
-          return <Picture image={image} id={index} />;
-          console.log(image);
-        })}
+        <Grid images={images} />
       </div>
     );
   }

@@ -14,6 +14,10 @@ body {
 		border: 1px solid black;
 	}
 }
+.box0 {
+ grid-column: 11/19;
+ grid-row: 2/12;
+}
 
 .box1 {
  grid-column: 4/12;
@@ -21,18 +25,18 @@ body {
 }
 
 .box2 {
- grid-column: 11/19;
- grid-row: 2/12;
+ grid-column: 14/21;
+ grid-row: 11/21;
 }
 
 .box3 {
- grid-column: 1/7;
- grid-row: 6/18;
+ grid-column: 6/16;
+ grid-row: 7/16;
 }
 
 .box4 {
- grid-column: 6/16;
- grid-row: 7/16;
+ grid-column: 1/7;
+ grid-row: 6/18;
 }
 
 .box5 {
@@ -40,7 +44,3 @@ body {
  grid-row: 13/21;
 }
 
-.box6 {
- grid-column: 14/21;
- grid-row: 11/21;
-}
