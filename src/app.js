@@ -28,14 +28,16 @@ export default class App extends React.Component {
 
   render() {
   	let images = this.state.images.map((image, index) => {
+  		const style = {
+			backgroundImage:`url('${image.webformatURL}')`
+  		}
   		return(
-  			<div key={index} className={"box" + index }>
-  				<img src={image.webformatURL} alt="dddd" />
+  			<div key={index} className={"box" + index } style={style}>
   			</div>
   		);
   	});
     return (
-      <div className="container">
+      <div>
         <Grid images={images} />
       </div>
     );
