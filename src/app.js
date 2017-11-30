@@ -9,7 +9,7 @@ export default class App extends React.Component {
     super(props);
     this.state = {
       images: [],
-      searchQuery: "christmas"
+      searchQuery: ""
     };
   }
 
@@ -54,7 +54,6 @@ export default class App extends React.Component {
       <div>
         <Header
           changes={this.changeName.bind(this)}
-          UserInput={this.state.searchQuery}
         />
         <Grid images={images} />
       </div>
