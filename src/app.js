@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import axios from 'axios';
 import Grid from "./components/grid";
 import Header from "./components/Header";
 import "./sass/index.scss";
@@ -26,12 +27,10 @@ export default class App extends React.Component {
       this.state.searchQuery +
       "&image_type=photo&per_page=6";
 
-    fetch(url)
-      .then(res => res.json())
-      .then(data => {
-        //console.log(data);
+    axios.get(url)
+      .then(res => {
         this.setState({
-          images: data.hits
+          images: res.data.hits
         });
       });
   };
