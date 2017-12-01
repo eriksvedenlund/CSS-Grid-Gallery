@@ -10,22 +10,19 @@ export default class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			images: [],
-			searchQuery: ""
+			images: []
 		};
 	}
 
 	changeName = evt => {
-		this.setState({
-			searchQuery: evt.target.value
-		});
-		console.log(this.state.searchQuery);
+		let searchQuery = evt.target.value;
+		this.fetchImages(searchQuery);
 	};
 
-	fetchImages = e => {
+	fetchImages = searchQuery => {
 		const url =
 			"https://pixabay.com/api/?key=7218190-f36bf2d395f9f4e25477f5282&q=" +
-			this.state.searchQuery +
+			searchQuery +
 			"&image_type=photo&per_page=6";
 
 		axios.get(url)
@@ -38,12 +35,18 @@ export default class App extends React.Component {
 	};
 
 	componentDidMount() {
-		//Make get request
-		this.fetchImages();
-	}
+		const url =
+			"https://pixabay.com/api/?key=7218190-f36bf2d395f9f4e25477f5282&q=" +
+			"" +
+			"&image_type=photo&per_page=6";
 
-	componentDidUpdate() {
-		this.fetchImages();
+		axios.get(url)
+			.then(res => {
+				this.setState({
+					images: res.data.hits
+				});
+			})
+		.catch(err => console.error(err))
 	}
 
 	render() {
