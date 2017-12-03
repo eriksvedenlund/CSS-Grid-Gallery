@@ -59,7 +59,7 @@ export default class App extends React.Component {
 		return (
 			<div>
 				<Header
-					changes={this.changeName.bind(this)}
+					changes={this.changeName}
 				/>
 				<Grid images={images}/>
 			</div>
