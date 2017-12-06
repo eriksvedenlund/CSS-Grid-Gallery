@@ -11,8 +11,11 @@ Live demo: [CSS Grid Gallery](https://eriksvedenlund.github.io/)
 ## Contributors
 
 [Andreas Vilhelmsson](https://www.linkedin.com/in/andreas-vilhelmsson-036165115/)
+
 [Erik Svedenlund](https://www.linkedin.com/in/erik-svedenlund-b8829512a/)
+
 [Lena Last](https://www.linkedin.com/in/lena-last/)
+
 [Viktor Johansson](https://www.linkedin.com/in/viktorjohansson01/)
 
 ## Usage
@@ -24,8 +27,12 @@ Run `npm start` and go to `localhost:8080`
 ## Technologies
 
 React
+
 CSS Grid
+
+Axios
 
 ## API
 
 [Pixabay](https://pixabay.com/en/service/about/api/)
+
